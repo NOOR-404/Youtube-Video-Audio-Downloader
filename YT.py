@@ -1,6 +1,10 @@
 #!/data/data/com.termux/files/usr/bin/python3.14
 # -*- coding: utf-8 -*-
-import os, sys, time
+import os, sys, time,shutil
+if not shutil.which("ffmpeg"):os.system("clear");print(f"[~] FFmpeg not found. Installing...\n{60*'-'}");os.system("pkg install ffmpeg -y")
+else:pass
+if not shutil.which("yt-dlp"):os.system("clear");print(f"[~] yt-dlp not found. Installing...\n{60*'-'}");os.system("pip install --upgrade yt-dlp")
+else:pass
 from yt_dlp import YoutubeDL
 
 P = '\033[35m'; R = '\033[0m'
